@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "ghgist"
+version = "0.1.0"
+description = ""
+authors = ["Nikita Bosov <neckbosov@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.25.1"
+
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.1"
+flake8 = "^3.8.4"
+autopep8 = "^1.5.4"
+python-language-server = "^0.36.2"
+mypy = "^0.790"
+wemake-python-styleguide = "^0.15.0"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry.scripts]
+ghgist = 'ghgist.cli:main'
