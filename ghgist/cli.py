@@ -40,7 +40,7 @@ def create_parser() -> argparse.ArgumentParser:  # noqa: 210
     return parser
 
 
-def main() -> None:
+def main() -> None:  # noqa: 210
     """Parse user's input and execute given command."""
     try:
         with open('.ghgist', 'r') as ghgist_file:
@@ -63,8 +63,9 @@ def main() -> None:
         'delete': lambda args: cmd.gist_delete(args.gist_id),
     }
     args = create_parser().parse_args()
-    if args.command in cmd_functions:
-        cmd_functions[args.command](args)  # type: ignore
+    cmd_function = cmd_functions.get(args.command)
+    if cmd_function is not None:
+        cmd_function(args)  # type: ignore
     else:
         print('Unknown command')  # noqa: 421
 

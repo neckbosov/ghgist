@@ -2,7 +2,6 @@ import json
 from typing import Any, Dict, List
 
 import requests
-
 from ghgist import gist_utils
 
 GITHUB_API = 'https://api.github.com'
